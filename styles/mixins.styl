@@ -1,0 +1,97 @@
+// Миксины для Stylus
+
+// Центрирование элемента
+center()
+  display flex
+  justify-content center
+  align-items center
+
+// Абсолютное позиционирование
+absolute(top = null, right = null, bottom = null, left = null)
+  position absolute
+  if top is not null
+    top top
+  if right is not null
+    right right
+  if bottom is not null
+    bottom bottom
+  if left is not null
+    left left
+
+// Фиксированное позиционирование
+fixed(top = null, right = null, bottom = null, left = null)
+  position fixed
+  if top is not null
+    top top
+  if right is not null
+    right right
+  if bottom is not null
+    bottom bottom
+  if left is not null
+    left left
+
+// Размеры элемента
+size(width, height = width)
+  width width
+  height height
+
+// Переход
+transition(properties = all, duration = 0.3s, timing = ease)
+  transition properties duration timing
+
+// Тень
+box-shadow(x = 0, y = 4px, blur = 6px, color = rgba(0, 0, 0, 0.1))
+  box-shadow x y blur color
+
+// Скругление углов
+border-radius(radius = 4px)
+  border-radius radius
+
+// Обрезка текста с многоточием
+text-ellipsis()
+  overflow hidden
+  text-overflow ellipsis
+  white-space nowrap
+
+// Сброс списка
+reset-list()
+  margin 0
+  padding 0
+  list-style none
+
+// Очистка флоатов
+clearfix()
+  &:after
+    content ""
+    display table
+    clear both
+
+// Скрытие элемента визуально (для доступности)
+visually-hidden()
+  position absolute
+  width 1px
+  height 1px
+  margin -1px
+  padding 0
+  overflow hidden
+  clip rect(0, 0, 0, 0)
+  border 0
+
+// Адаптивный контейнер
+//container(max-width = 1200px)
+//  max-width max-width
+//  margin 0 auto
+//  padding 0 20px
+
+// Градиент
+gradient(start-color, end-color, direction = to bottom)
+  background linear-gradient(direction, start-color, end-color)
+
+// Медиа-запросы
+below(breakpoint)
+  @media (max-width: breakpoint)
+    {block}
+
+above(breakpoint)
+  @media (min-width: breakpoint)
+    {block}

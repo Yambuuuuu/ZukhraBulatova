@@ -1,7 +1,7 @@
 <template>
-	<div>
+	<div class="layout">
 		<Header />
-		<main>
+		<main class="main-content">
 			<slot />
 		</main>
 		<Footer />
@@ -14,6 +14,14 @@ import Footer from '~/components/UI/Footer.vue'
 </script>
 
 <style lang="stylus">
+.layout
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+
+.main-content
+  flex: 1
+
 header {
   padding: 20px;
   background-color: #f5f5f5;

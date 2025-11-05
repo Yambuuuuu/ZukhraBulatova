@@ -11,10 +11,6 @@
 defineProps({
   error: Object
 })
-
-definePageMeta({
-  layout: 'default'
-})
 </script>
 
 <style scoped>
