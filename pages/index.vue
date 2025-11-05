@@ -1,13 +1,17 @@
 <template>
-  <div class="container">
-    <h1>Welcome to ZB Project</h1>
-    <p>This is the homepage of your project.</p>
-  </div>
+	<div class="home">
+		<div class="container">
+			<div class="home__inner">
+				<div class="home-left"></div>
+				<div class="home-right"></div>
+			</div>
+		</div>
+	</div>
 </template>
 
 <script setup>
 definePageMeta({
-  title: 'Главная'
+  title: 'Главная',
 })
 </script>
 

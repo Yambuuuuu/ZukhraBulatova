@@ -1,25 +1,19 @@
 <template>
-  <div>
-    <header>
-      <nav>
-        <NuxtLink to="/" class="nav-link">Главная</NuxtLink>
-        <NuxtLink to="/about" class="nav-link">О проекте</NuxtLink>
-      </nav>
-    </header>
-    <main>
-      <slot />
-    </main>
-    <footer>
-      <p>© {{ new Date().getFullYear() }} ZB Project</p>
-    </footer>
-  </div>
+	<div>
+		<Header />
+		<main>
+			<slot />
+		</main>
+		<Footer />
+	</div>
 </template>
 
 <script setup>
-// В Nuxt 3+ не требуется объявлять name для layout
+import Header from '~/components/UI/Header.vue'
+import Footer from '~/components/UI/Footer.vue'
 </script>
 
-<style>
+<style lang="stylus">
 header {
   padding: 20px;
   background-color: #f5f5f5;
