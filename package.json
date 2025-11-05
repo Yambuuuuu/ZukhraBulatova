@@ -1,0 +1,25 @@
+{
+  "name": "zb-project",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "axios": "^1.9.0",
+    "js-cookie": "^3.0.5",
+    "pinia": "^3.0.1",
+    "vue": "^3.5.22",
+    "vue-inline-svg": "^4.0.1",
+    "vue-router": "^4.6.3"
+  },
+  "devDependencies": {
+    "@nuxt/types": "^2.15.8",
+    "@nuxt/typescript-build": "^2.1.0",
+    "nuxt": "^4.2.0",
+    "typescript": "^5.9.3"
+  }
+}

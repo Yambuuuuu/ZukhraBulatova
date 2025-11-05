@@ -1,0 +1,23 @@
+[
+  {
+    "name": "about",
+    "path": "/about",
+    "component": "C:\\\\Users\\\\Сергей\\\\OneDrive\\\\Рабочий стол\\\\ZB\\\\pages\\\\about.vue",
+    "chunkName": "pages/about",
+    "url": "/about"
+  },
+  {
+    "name": "error",
+    "path": "/error",
+    "component": "C:\\\\Users\\\\Сергей\\\\OneDrive\\\\Рабочий стол\\\\ZB\\\\pages\\\\error.vue",
+    "chunkName": "pages/error",
+    "url": "/error"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "C:\\\\Users\\\\Сергей\\\\OneDrive\\\\Рабочий стол\\\\ZB\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "url": "/"
+  }
+]
