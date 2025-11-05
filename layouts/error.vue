@@ -3,15 +3,18 @@
     <h1 v-if="error.statusCode === 404">Страница не найдена</h1>
     <h1 v-else>Произошла ошибка</h1>
     <h2>{{ error.message }}</h2>
-    <nuxt-link to="/" class="home-link">Вернуться на главную</nuxt-link>
+    <NuxtLink to="/" class="home-link">Вернуться на главную</NuxtLink>
   </div>
 </template>
 
-<script>
-export default {
-  props: ['error'],
-  layout: 'default' // Указываем что используем default layout
-}
+<script setup>
+defineProps({
+  error: Object
+})
+
+definePageMeta({
+  layout: 'default'
+})
 </script>
 
 <style scoped>

@@ -634,9 +634,6 @@ const _inlineRuntimeConfig = {
       "/__nuxt_error": {
         "cache": false
       },
-      "/**": {
-        "swr": false
-      },
       "/_nuxt/builds/meta/**": {
         "headers": {
           "cache-control": "public, max-age=31536000, immutable"
@@ -1354,7 +1351,7 @@ const _M5CNDFP2bD14aae67k0FK5gWlPfy8k3UMlKRszJV1NY = (function(nitro) {
 
 const rootDir = "C:/Users/Сергей/OneDrive/Рабочий стол/ZB";
 
-const appHead = {"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""}],"link":[{"rel":"icon","type":"image/x-icon","href":"/favicon.ico"}],"style":[],"script":[],"noscript":[],"title":"ZB","htmlAttrs":{"lang":"ru"}};
+const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[],"style":[],"script":[],"noscript":[]};
 
 const appRootTag = "div";
 

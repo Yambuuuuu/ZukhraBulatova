@@ -2,15 +2,18 @@
   <div class="container">
     <h1>{{ error.statusCode }}</h1>
     <h2>{{ error.message }}</h2>
-    <nuxt-link to="/">Вернуться на главную</nuxt-link>
+    <NuxtLink to="/">Вернуться на главную</NuxtLink>
   </div>
 </template>
 
-<script>
-export default {
-  props: ['error'],
+<script setup>
+defineProps({
+  error: Object
+})
+
+definePageMeta({
   layout: 'default'
-}
+})
 </script>
 
 <style scoped>

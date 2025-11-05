@@ -2,7 +2,7 @@
   <div class="container">
     <h1>О проекте</h1>
     <p>Это тестовая страница для проверки работы маршрутизации.</p>
-    <nuxt-link to="/">Вернуться на главную</nuxt-link>
+    <NuxtLink to="/">Вернуться на главную</NuxtLink>
   </div>
 </template>
 
