@@ -46,18 +46,27 @@ yarn-error.log*
 .nitro/
 .cache/
 dist/
+.vercel/
+.netlify/
+
+# Nuxt generate
+.nuxt/
+.output/
+dist/
+
+# Environment variables
 .env
 .env.*
 !.env.example
 
+# Lock files (раскомментируйте если хотите игнорировать)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
 # Logs
 *.log
 logs/
-
-# Environment variables
-.env
-.env.local
-.env.*.local
 
 # Database
 *.db
