@@ -45,14 +45,8 @@ yarn-error.log*
 .output/
 .nitro/
 .cache/
-dist/
 .vercel/
 .netlify/
-
-# Nuxt generate
-.nuxt/
-.output/
-dist/
 
 # Environment variables
 .env
