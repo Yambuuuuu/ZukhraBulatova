@@ -26,7 +26,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   // Модули
-  modules: ['@nuxt/eslint', '@nuxt/image'],
+  modules: ['@nuxt/eslint', '@nuxt/image', '@pinia/nuxt'],
 
   // Конфигурация @nuxt/image
   image: {

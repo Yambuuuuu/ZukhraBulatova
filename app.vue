@@ -15,16 +15,16 @@
 @import "/styles/variables.styl"
 @import "/styles/global.styl"
 
-.container
-  margin: 0 auto
-  max-width: 1200px
-  padding: 0 20px
+.container {
+	margin 0 auto
+	width: 100%
+	padding: 0 var(--side-padding)
+	overflow visible
+	max-width: calc(var(--container-width) + var(--side-padding) * 2)
 
-.page-container
-  margin: 0 auto
-  display: flex
-  flex-direction: column
-  justify-content: center
-  align-items: center
-  text-align: center
+	+below(1025px) {
+		padding: 0 var(--side-mobile-padding)
+	}
+}
+
 </style>

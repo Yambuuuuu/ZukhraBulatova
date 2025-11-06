@@ -140,6 +140,29 @@ export default [
 
       // Требует пробелы внутри mustache интерполяций {{ }}
       'vue/mustache-interpolation-spacing': ['error', 'always'],
+
+      // Устанавливает максимальную длину строки
+      'vue/max-len': ['error', {
+        code: 140,
+        template: 140,
+        tabWidth: 4,
+        ignoreUrls: true,
+        ignoreStrings: true,
+        ignoreTemplateLiterals: true,
+        ignoreRegExpLiterals: true,
+        ignoreHTMLAttributeValues: true,
+        ignoreHTMLTextContents: true,
+      }],
+
+      // Разрешает несколько атрибутов на одной строке
+      'vue/max-attributes-per-line': ['error', {
+        singleline: {
+          max: 3,
+        },
+        multiline: {
+          max: 1,
+        },
+      }],
     },
   },
 ]

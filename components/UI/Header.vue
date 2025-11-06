@@ -7,14 +7,12 @@ import SvgIcon from '~/components/UI/SvgIcon.vue'
 	<div class="navbar">
 		<div class="container">
 			<div class="navbar__inner">
-				<div class="navbar-left">
-					<NuxtLink
-						to="/"
-						class="navbar-link"
-					>
-						<SvgIcon icon="logo" />
-					</NuxtLink>
-				</div>
+				<NuxtLink
+					to="/"
+					class="navbar-link"
+				>
+					<SvgIcon class="navbar-icon" icon="logo" />
+				</NuxtLink>
 
 				<div class="navbar-right">
 					<NuxtLink
@@ -63,17 +61,24 @@ import SvgIcon from '~/components/UI/SvgIcon.vue'
 .navbar {
 	display flex
 	background-color var(--brown)
-	padding 25px 0
+	padding 15px 0
 
 	&__inner {
 		display flex
 		align-items center
-		gap 62px
+		gap 60px
+	}
+
+	&-icon {
+		width 125px
+		height 125px
 	}
 
 	&-right {
 		display flex
-		gap 55px
+		wisth 100%
+		gap 40px
+		justify-content space-between
 	}
 
 	&-link {
