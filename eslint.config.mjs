@@ -16,6 +16,8 @@ export default [
         sourceType: 'module',
       },
       globals: {
+        process: 'readonly',
+        defineNuxtConfig: 'readonly',
         definePageMeta: 'readonly',
         defineNuxtComponent: 'readonly',
         defineNuxtRouteMiddleware: 'readonly',
