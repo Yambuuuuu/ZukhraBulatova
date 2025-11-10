@@ -22,11 +22,7 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
 							src="/img/main-photo.png"
 							alt=""
 						>
-						<img
-							class="home-left-down"
-							src="/img/Rectangle.png"
-							alt=""
-						>
+						<span class="home-left-down"></span>
 					</div>
 					<div class="home-right">
 						<div class="home-right-info">
@@ -48,7 +44,7 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
 							</div>
 						</div>
 						<div class="home-right-pictures">
-							<img class="home-right-pictures-rectangle" src="/img/Rectangle2.png" alt="">
+							<span class="home-right-pictures-rectangle"></span>
 							<img class="home-right-pictures-town" src="/img/town.png" alt="">
 						</div>
 					</div>
@@ -123,7 +119,7 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
 		&-word {
 			font-family var(--main-font-greyqo)
 			font-size 9.5rem
-			background-color #AA9A8A
+			background-color var(--title-gradient)
 			color transparent
 			-webkit-background-clip text
 			background-clip text
@@ -133,7 +129,7 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
 		&-text {
 			font-family var(--main-font-traditional-arabic)
 			font-size 4rem
-			background-color #AA9A8A
+			background-color var(--title-gradient)
 			color transparent
 			-webkit-background-clip text
 			background-clip text
@@ -153,10 +149,11 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
 			}
 
 			&-rectangle {
-				max-width 592px
+				width 592px
 				height 97px
 				position absolute
 				transform: translate(27%, 45%);
+				background-color var(--rectangle-bg)
 			}
 		}
 	}
@@ -188,6 +185,7 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
 			width 100%
 			height 422px
 			aspect-ratio 275 / 422
+			background-color var(--rectangle-bg)
 		}
 	}
 

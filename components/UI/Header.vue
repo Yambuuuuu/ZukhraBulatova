@@ -1,6 +1,11 @@
 <script setup>
+import { useThemeStore } from '~/stores/theme'
+import { storeToRefs } from 'pinia'
 
+const themeStore = useThemeStore()
+const { isDark } = storeToRefs(themeStore)
 import SvgIcon from '~/components/UI/SvgIcon.vue'
+import ThemeToggle from '~/components/UI/ThemeToggle.vue'
 </script>
 
 <template>
@@ -11,7 +16,8 @@ import SvgIcon from '~/components/UI/SvgIcon.vue'
 					to="/"
 					class="navbar-link"
 				>
-					<SvgIcon class="navbar-icon" icon="logo" />
+					<SvgIcon v-if="!isDark" class="navbar-icon" icon="logo" />
+					<SvgIcon v-else class="navbar-icon" icon="logo-dark" />
 				</NuxtLink>
 
 				<div class="navbar-right">
@@ -51,6 +57,7 @@ import SvgIcon from '~/components/UI/SvgIcon.vue'
 					>
 						Контакты
 					</NuxtLink>
+					<ThemeToggle class="navbar-toggle" />
 				</div>
 			</div>
 		</div>
@@ -76,9 +83,10 @@ import SvgIcon from '~/components/UI/SvgIcon.vue'
 
 	&-right {
 		display flex
-		wisth 100%
+		width 100%
 		gap 40px
 		justify-content space-between
+		align-items center
 	}
 
 	&-link {
@@ -87,6 +95,10 @@ import SvgIcon from '~/components/UI/SvgIcon.vue'
 		text-transform: uppercase;
 		color var(--main)
 		text-decoration none
+	}
+
+	&-toggle {
+		background  var(--main)
 	}
 }
 </style>

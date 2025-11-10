@@ -5,7 +5,15 @@
 </template>
 
 <script setup>
-// Базовый app.vue файл для Nuxt 4
+import { useThemeStore } from '~/stores/theme'
+import { onMounted } from 'vue'
+
+// Инициализация темы
+const themeStore = useThemeStore()
+
+onMounted(() => {
+  themeStore.initTheme()
+})
 </script>
 
 <style lang="stylus">
