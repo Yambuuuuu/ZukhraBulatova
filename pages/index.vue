@@ -27,18 +27,18 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
 					<div class="home-right">
 						<div class="home-right-info">
 							<div class="home-right-info-title">
-								<div>
-									<span class="home-right-word" data-text="Z">Z</span>
-									<span class="home-right-text" data-text="UKHRA">UKHRA</span>
+								<div class="home-right-info-title-inner">
+									<span class="home-right-word home-right-word-z" data-text="Z">Z</span>
+									<span class="home-right-text home-right-text-ukhra" data-text="UKHRA">UKHRA</span>
 								</div>
-								<div>
-									<span class="home-right-word" data-text="B">B</span>
-									<span class="home-right-text" data-text="ULATOVA">ULATOVA</span>
+								<div class="home-right-info-title-inner">
+									<span class="home-right-word home-right-word-b" data-text="B">B</span>
+									<span class="home-right-text home-right-text-ulatova" data-text="ULATOVA">ULATOVA</span>
 								</div>
 							</div>
 							<div class="home-right-info-text">
 								<span>
-									Язык - это элегантность мысли и мост между вами  миром.
+									Язык - это элегантность мысли и мост между вами и миром.
 									Учить язык - значит не только говорить красиво, но и видеть глубже!
 								</span>
 							</div>
@@ -64,138 +64,175 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
 
 <style lang="stylus">
 .home {
-	display flex
-	width 100%
+  display flex
+  width 100%
 
-	&__inner {
-		display flex
-		flex-direction column
-		width 100%
-	}
+  &__inner {
+    display flex
+    flex-direction column
+    width 100%
+  }
 
-	&-main {
-		display flex
-		gap 30px
-		width 100%
-		//grid-template-columns repeat(2, 1fr)
-		margin-top 122px
-		height 100%
-		overflow visible
-	}
+  &-main {
+    display flex
+    gap 30px
+    width 100%
+    //grid-template-columns repeat(2, 1fr)
+    margin-top 135px
+    height 100%
+    overflow visible
+  }
 
-	&-right {
-		display flex
-		flex-direction column
-		max-width 790px
-		width 100%
-		flex 1 1 65%
-		min-width 0
-		height 100%
+  &-right {
+    display flex
+    flex-direction column
+    max-width 790px
+    width 100%
+    flex 1 1 65%
+    min-width 0
+    height 100%
+    overflow visible
 
-		&-info {
-			display flex
-			flex-direction column
-			align-items flex-start
-			gap 14px
-			overflow visible
+    &-info {
+      display flex
+      flex-direction column
+      align-items flex-start
+      gap 14px
+      overflow visible
 
-			&-title {
-				display flex
-				width 100%
-				gap 56px
-				overflow visible
-			}
+      &-title {
+        display flex
+        width 100%
+        overflow visible
+        gap 58px
 
-			&-text {
-				flex-direction column
-				display flex
-				max-width 100%
-				font-family var(--second-font-cormorant)
-				font-size 2rem
-				color var(--light-brown)
-			}
-		}
+        &-inner {
+          display flex
+          margin-top 60px
+          width 100%
+          height 100%
+        }
+      }
 
-		&-word {
-			font-family var(--main-font-greyqo)
-			font-size 9.5rem
-			background-color var(--title-gradient)
-			color transparent
-			-webkit-background-clip text
-			background-clip text
-			text-shadow 0 4px 4px rgba(0, 0, 0, 0.25)
-		}
+      &-text {
+        flex-direction column
+        display flex
+        max-width 100%
+        font-family var(--second-font-cormorant)
+        font-size 2rem
+        color var(--title-gradient)
+      }
+    }
 
-		&-text {
-			font-family var(--main-font-traditional-arabic)
-			font-size 4rem
-			background-color var(--title-gradient)
-			color transparent
-			-webkit-background-clip text
-			background-clip text
-			text-shadow 0 4px 4px rgba(0, 0, 0, 0.25)
-		}
+    &-word {
+      display flex
+      width 100%
+      font-family var(--main-font-edwardianscript)
+      font-size 8.75rem
+      background-color var(--title-gradient)
+      color transparent
+      -webkit-background-clip text
+      background-clip text
+      text-shadow 0 4px 4px rgba(0, 0, 0, 0.25)
 
-		&-pictures {
-			display flex
-			height 100%
-			position relative
-			margin-top 35px
+      &-z {
+        display flex
+        height 100%
+        max-height 180px
+        max-width 150px
+        position absolute
+        transform translate(-5px, -62%)
+      }
 
-			&-town {
-				max-width 791px
-				height 121px
-				z-index 1000
-			}
+      &-b {
+        display flex
+        position absolute
+        transform translate(-20%, -43%)
+        max-width 200px
+      }
+    }
 
-			&-rectangle {
-				width 592px
-				height 97px
-				position absolute
-				transform: translate(27%, 45%);
-				background-color var(--rectangle-bg)
-			}
-		}
-	}
+    &-text {
+      display flex
+      font-family var(--main-font-traditional-arabic)
+      font-size 4.125rem
+      background-color var(--title-gradient)
+      color transparent
+      -webkit-background-clip text
+      background-clip text
+      text-shadow 0 4px 4px rgba(0, 0, 0, 0.25)
 
-	&-left {
-		display flex
-		max-width 400px
-		width 100%
-		//flex 0 1 35%
-		min-width 250px
-		position relative
-		min-height 550px
-		overflow visible
+      &-ukhra {
+        display flex
+        padding-left 85px
+      }
 
-		&-main {
-			display flex
-			position absolute
-			transform: translate(15%, -10%);
-			max-width 339px
-			width 100%
-			height auto
-			aspect-ratio 339 / 523
-			z-index 10
-		}
+      &-ulatova {
+        display flex
+        padding-left 90px
+      }
+    }
 
-		&-down {
-			display flex
-			max-width 275px
-			width 100%
-			height 422px
-			aspect-ratio 275 / 422
-			background-color var(--rectangle-bg)
-		}
-	}
+    &-pictures {
+      display flex
+      height 100%
+      position relative
+      margin-top 35px
 
-	&-advantages {
-		display grid
-		grid-template-columns repeat(3, 1fr)
-		gap 40px
-		margin-top 30px
-		width 100%
-		max-height 170px
-	}
+      &-town {
+        max-width 791px
+        height 121px
+        z-index 1000
+      }
+
+      &-rectangle {
+        width 592px
+        height 97px
+        position absolute
+        transform translate(27%, 45%)
+        background-color var(--rectangle-bg)
+      }
+    }
+  }
+
+  &-left {
+    display flex
+    max-width 400px
+    width 100%
+    //flex 0 1 35%
+    min-width 250px
+    position relative
+    min-height 550px
+    overflow visible
+
+    &-main {
+      display flex
+      position absolute
+      transform translate(15%, -10%)
+      max-width 339px
+      width 100%
+      height auto
+      aspect-ratio 339 / 523
+      z-index 10
+    }
+
+    &-down {
+      display flex
+      max-width 275px
+      width 100%
+      height 422px
+      aspect-ratio 275 / 422
+      background-color var(--rectangle-bg)
+    }
+  }
+
+  &-advantages {
+    display grid
+    grid-template-columns repeat(3, 1fr)
+    gap 40px
+    margin-top 30px
+    width 100%
+    max-height 170px
+  }
 }
 </style>

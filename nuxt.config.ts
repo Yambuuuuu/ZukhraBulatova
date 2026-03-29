@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { resolve } from 'path'
+
 export default defineNuxtConfig({
   // Версия совместимости
   compatibilityDate: '2024-11-01',
@@ -36,6 +38,20 @@ export default defineNuxtConfig({
 
   // Автоимпорт компонентов
   components: true,
+
+  // Конфигурация Vite (Stylus preprocessor)
+  vite: {
+    css: {
+      preprocessorOptions: {
+        stylus: {
+          imports: [
+            resolve(__dirname, 'styles/mixins.styl'),
+            resolve(__dirname, 'styles/variables.styl'),
+          ],
+        },
+      },
+    },
+  },
 
   // Конфигурация сборки
   nitro: {

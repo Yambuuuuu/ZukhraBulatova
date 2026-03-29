@@ -28,22 +28,10 @@ import ThemeToggle from '~/components/UI/ThemeToggle.vue'
 						Обо мне
 					</NuxtLink>
 					<NuxtLink
-						to="/services"
+						to="/courses"
 						class="navbar-link"
 					>
-						Услуги
-					</NuxtLink>
-					<NuxtLink
-						to="/price"
-						class="navbar-link"
-					>
-						Прайс
-					</NuxtLink>
-					<NuxtLink
-						to="/reviews"
-						class="navbar-link"
-					>
-						Отзывы
+						О курсах
 					</NuxtLink>
 					<NuxtLink
 						to="/blog"
@@ -52,10 +40,16 @@ import ThemeToggle from '~/components/UI/ThemeToggle.vue'
 						Блог
 					</NuxtLink>
 					<NuxtLink
-						to="/contacts"
+						to="/reviews"
 						class="navbar-link"
 					>
-						Контакты
+						Отзывы
+					</NuxtLink>
+					<NuxtLink
+						to="/registration"
+						class="navbar-link"
+					>
+						Запись
 					</NuxtLink>
 					<ThemeToggle class="navbar-toggle" />
 				</div>
