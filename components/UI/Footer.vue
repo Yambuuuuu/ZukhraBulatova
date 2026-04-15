@@ -13,20 +13,19 @@
 </template>
 
 <style lang="stylus">
-.footer {
-	display flex
-	align-items center
-	justify-content center
-	text-align center
-	margin auto
-	margin-top 150px
-	background var(--brown)
-	width 100%
-	height 100%
-	padding 30px
+.footer
+  display flex
+  align-items center
+  justify-content center
+  text-align center
+  margin auto
+  margin-top 150px
+  background var(--brown)
+  width 100%
+  height 100%
+  padding 30px
+  z-index 100
 
-	&-text {
-		color var(--main)
-	}
-}
+  &-text
+    color var(--main)
 </style>
