@@ -1,8 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { resolve } from 'path'
-import { fileURLToPath } from 'url'
-
-const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
 export default defineNuxtConfig({
   // Версия совместимости
@@ -49,8 +46,8 @@ export default defineNuxtConfig({
       preprocessorOptions: {
         stylus: {
           imports: [
-            resolve(__dirname, 'styles/mixins.styl'),
-            resolve(__dirname, 'styles/variables.styl'),
+            resolve(process.cwd(), 'styles/mixins.styl'),
+            resolve(process.cwd(), 'styles/variables.styl'),
           ],
         },
       },
