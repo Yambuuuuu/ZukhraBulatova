@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   // Основные настройки
   app: {
+    baseURL: '/ZukhraBulatova/',
     head: {
       title: 'Zukhra Bulatova',
       htmlAttrs: {
@@ -55,10 +56,6 @@ export default defineNuxtConfig({
 
   // Конфигурация сборки
   nitro: {
-    preset: 'node-server',
-    // Настройка обработки ошибок
-    routeRules: {
-      '/**': { swr: false },
-    },
+    preset: 'github-pages',
   },
 })
