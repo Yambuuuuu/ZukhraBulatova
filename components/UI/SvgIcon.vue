@@ -1,6 +1,8 @@
 <script setup>
 import InlineSvg from 'vue-inline-svg'
 
+const { $asset } = useNuxtApp()
+
 defineProps({
   icon: {
     type: String,
@@ -15,7 +17,7 @@ defineProps({
 
 <template>
 	<InlineSvg
-		:src="`/${category}/${icon}.svg`"
+		:src="$asset(`/${category}/${icon}.svg`)"
 		:class="'icon'"
 		class="svg-icon"
 	/>

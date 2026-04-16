@@ -1,16 +1,16 @@
 <template>
 	<div class="about-main-wrapper">
 		<div class="about-main-wrapper-inner">
-			<img :src="themeStore.isDark ? '/svg/art-player-left-light.svg' : '/img/art-player-left-dark.png'" alt="" class="about-main-wrapper-art about-main-wrapper-art--left" />
-			<img :src="themeStore.isDark ? '/svg/oval-player-light.svg' : '/img/oval-player-dark.png'" alt="" class="about-main-wrapper-oval" />
-			<img :src="themeStore.isDark ? '/svg/art-player-right-light.svg' : '/img/art-player-right-dark.png'" alt="" class="about-main-wrapper-art about-main-wrapper-art--right" />
+			<img :src="themeStore.isDark ? $asset('/svg/art-player-left-light.svg') : $asset('/img/art-player-left-dark.png')" alt="" class="about-main-wrapper-art about-main-wrapper-art--left" />
+			<img :src="themeStore.isDark ? $asset('/svg/oval-player-light.svg') : $asset('/img/oval-player-dark.png')" alt="" class="about-main-wrapper-oval" />
+			<img :src="themeStore.isDark ? $asset('/svg/art-player-right-light.svg') : $asset('/img/art-player-right-dark.png')" alt="" class="about-main-wrapper-art about-main-wrapper-art--right" />
 		</div>
 		<div class="about-main-player">
-			<audio ref="audio" src="/audio/lana-del-rey-summertime-sadness.mp3"></audio>
+			<audio ref="audio" :src="$asset('/audio/lana-del-rey-summertime-sadness.mp3')"></audio>
 			<div class="about-main-player-controls">
 				<button class="about-main-player-btn" @click="skip(-10)">
 					<img
-						:src="themeStore.isDark ? '/img/rewind-light.png' : '/img/rewind-dark.png'"
+						:src="themeStore.isDark ? $asset('/img/rewind-light.png') : $asset('/img/rewind-dark.png')"
 						alt="rewind"
 						class="about-main-player-btn-icon"
 					/>
@@ -18,20 +18,20 @@
 				<button class="about-main-player-play" @click="togglePlay">
 					<img
 						v-if="!playing"
-						:src="themeStore.isDark ? '/img/play-light.png' : '/img/play-dark.png'"
+						:src="themeStore.isDark ? $asset('/img/play-light.png') : $asset('/img/play-dark.png')"
 						alt="play"
 						class="about-main-player-play-icon"
 					/>
 					<img
 						v-else
-						:src="themeStore.isDark ? '/svg/pause-light.svg' : '/svg/pause-dark.svg'"
+						:src="themeStore.isDark ? $asset('/svg/pause-light.svg') : $asset('/svg/pause-dark.svg')"
 						alt="pause"
 						class="about-main-player-play-icon"
 					/>
 				</button>
 				<button class="about-main-player-btn about-main-player-btn--forward" @click="skip(10)">
 					<img
-						:src="themeStore.isDark ? '/img/rewind-light.png' : '/img/rewind-dark.png'"
+						:src="themeStore.isDark ? $asset('/img/rewind-light.png') : $asset('/img/rewind-dark.png')"
 						alt="forward"
 						class="about-main-player-btn-icon about-main-player-btn-icon--flipped"
 					/>
@@ -51,6 +51,7 @@
 import { ref, onMounted } from 'vue'
 import { useThemeStore } from '~/stores/theme'
 
+const { $asset } = useNuxtApp()
 const themeStore = useThemeStore()
 const audio = ref(null)
 const playing = ref(false)

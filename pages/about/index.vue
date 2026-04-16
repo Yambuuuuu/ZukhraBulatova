@@ -4,13 +4,13 @@
 			<div class="about__inner">
 				<div class="about-main">
 					<div class="about-main-art">
-						<img class="about-main-art-left" src="/svg/about_decor.svg" alt="">
+						<img class="about-main-art-left" :src="$asset('/svg/about_decor.svg')" alt="">
 						<div class="about-main-art-group">
-							<img class="about-main-art-line" :src="themeStore.isDark ? '/svg/about-line-light.svg' : '/svg/about-line-dark.svg'" alt="">
-							<img class="about-main-art-center" src="/svg/about-center-decor.svg" alt="">
-							<img class="about-main-art-line" :src="themeStore.isDark ? '/svg/about-line-light.svg' : '/svg/about-line-dark.svg'" alt="">
+							<img class="about-main-art-line" :src="themeStore.isDark ? $asset('/svg/about-line-light.svg') : $asset('/svg/about-line-dark.svg')" alt="">
+							<img class="about-main-art-center" :src="$asset('/svg/about-center-decor.svg')" alt="">
+							<img class="about-main-art-line" :src="themeStore.isDark ? $asset('/svg/about-line-light.svg') : $asset('/svg/about-line-dark.svg')" alt="">
 						</div>
-						<img class="about-main-art-right" src="/svg/about_decor.svg" alt="">
+						<img class="about-main-art-right" :src="$asset('/svg/about_decor.svg')" alt="">
 					</div>
 					<div class="about-main-header">
 						<span class="about-main-header-word" data-text="A">A</span>
@@ -47,6 +47,7 @@ definePageMeta({
   title: 'О проекте',
 })
 
+const { $asset } = useNuxtApp()
 const themeStore = useThemeStore()
 </script>
 

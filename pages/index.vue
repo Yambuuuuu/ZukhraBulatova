@@ -7,6 +7,7 @@ definePageMeta({
   title: 'Главная',
 })
 
+const { $asset } = useNuxtApp()
 const advantagesStore = useAdvantagesStore()
 const advantages = computed(() => advantagesStore.getAllAdvantages())
 </script>
@@ -19,7 +20,7 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
 					<div class="home-left">
 						<img
 							class="home-left-main"
-							src="/img/main-photo.png"
+							:src="$asset('/img/main-photo.png')"
 							alt=""
 						>
 						<span class="home-left-down"></span>
@@ -45,7 +46,7 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
 						</div>
 						<div class="home-right-pictures">
 							<span class="home-right-pictures-rectangle"></span>
-							<img class="home-right-pictures-town" src="/img/town.png" alt="">
+							<img class="home-right-pictures-town" :src="$asset('/img/town.png')" alt="">
 						</div>
 					</div>
 				</div>
