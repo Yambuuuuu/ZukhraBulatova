@@ -1,14 +1,16 @@
 <template>
-  <div class="container">
-    <h1>О проекте</h1>
-    <p>Это тестовая страница для проверки работы маршрутизации.</p>
-    <NuxtLink to="/">Вернуться на главную</NuxtLink>
-  </div>
+	<div class="container">
+		<h1>О проекте</h1>
+		<p>Это тестовая страница для проверки работы маршрутизации.</p>
+		<NuxtLink to="/">
+			Вернуться на главную
+		</NuxtLink>
+	</div>
 </template>
 
 <script setup>
 definePageMeta({
-  title: 'О проекте'
+  title: 'О проекте',
 })
 </script>
 

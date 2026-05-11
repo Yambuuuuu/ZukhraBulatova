@@ -46,10 +46,10 @@ import ThemeToggle from '~/components/UI/ThemeToggle.vue'
 						Отзывы
 					</NuxtLink>
 					<NuxtLink
-						to="/registration"
+						to="/contacts"
 						class="navbar-link"
 					>
-						Запись
+						Контакты
 					</NuxtLink>
 					<ThemeToggle class="navbar-toggle" />
 				</div>

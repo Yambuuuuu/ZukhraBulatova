@@ -5,11 +5,7 @@
 				<div class="about-main">
 					<div class="about-main-art">
 						<img class="about-main-art-left" :src="$asset('/svg/about_decor.svg')" alt="">
-						<div class="about-main-art-group">
-							<img class="about-main-art-line" :src="themeStore.isDark ? $asset('/svg/about-line-light.svg') : $asset('/svg/about-line-dark.svg')" alt="">
-							<img class="about-main-art-center" :src="$asset('/svg/about-center-decor.svg')" alt="">
-							<img class="about-main-art-line" :src="themeStore.isDark ? $asset('/svg/about-line-light.svg') : $asset('/svg/about-line-dark.svg')" alt="">
-						</div>
+						<AboutMainArtGroup />
 						<img class="about-main-art-right" :src="$asset('/svg/about_decor.svg')" alt="">
 					</div>
 					<div class="about-main-header">
@@ -38,17 +34,16 @@
 </template>
 
 <script setup>
-import { useThemeStore } from '~/stores/theme'
-import AboutPlayerComponent from '~/components/About/AboutPlayerComponent.vue'
-import AboutSliderComponent from '~/components/About/AboutSliderComponent.vue'
-import AboutMarquee from '~/components/About/AboutMarquee.vue'
+import AboutMainArtGroup from '~/components/features/AboutMainArtGroup.vue'
+import AboutPlayerComponent from '~/components/features/AboutPlayerComponent.vue'
+import AboutSliderComponent from '~/components/features/AboutSliderComponent.vue'
+import AboutMarquee from '~/components/features/AboutMarquee.vue'
 
 definePageMeta({
   title: 'О проекте',
 })
 
 const { $asset } = useNuxtApp()
-const themeStore = useThemeStore()
 </script>
 
 <style lang="stylus">

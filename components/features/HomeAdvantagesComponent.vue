@@ -45,7 +45,7 @@ const props = defineProps({
 	position relative
 
 	&:not(:last-child)::after {
-		content ''
+		content: ''
 		position absolute
 		right -20px
 		top -20px
