@@ -49,6 +49,7 @@ const themeStore = useThemeStore()
   height 760px
   overflow hidden
   position relative
+  margin-top 20px
 
   &-ellipse {
     display flex
@@ -56,7 +57,14 @@ const themeStore = useThemeStore()
     z-index 10
     width 100%
     transform translate(0, -145px)
-    //opacity 0.4
+
+    +below(1400px) {
+      transform translate(0, -100px)
+    }
+
+    +below(1280px) {
+      transform translate(0, -50px)
+    }
 
     &-down {
       display flex
@@ -64,7 +72,6 @@ const themeStore = useThemeStore()
       z-index 10
       width 100%
       transform translate(0, -45px)
-      //opacity 0.4
     }
   }
 

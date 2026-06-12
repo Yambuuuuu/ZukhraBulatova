@@ -3,68 +3,83 @@
 		<div class="about-marquee__track">
 			<span class="about-marquee__inner" aria-hidden="true">
 				<span class="about-marquee__item">life content</span>
-				<span class="about-marquee__dot">•</span>
+				<img class="about-marquee__bant" :src="isDark ? $asset('/pictures-about/bant-light.png') : $asset('/pictures-about/bant-dark.png')" alt="">
 				<span class="about-marquee__item">education</span>
-				<span class="about-marquee__dot">•</span>
+				<img class="about-marquee__bant" :src="isDark ? $asset('/pictures-about/bant-light.png') : $asset('/pictures-about/bant-dark.png')" alt="">
 				<span class="about-marquee__item">comfortable classes</span>
-				<span class="about-marquee__dot">•</span>
+				<img class="about-marquee__bant" :src="isDark ? $asset('/pictures-about/bant-light.png') : $asset('/pictures-about/bant-dark.png')" alt="">
 				<span class="about-marquee__item">working rhythm</span>
-				<span class="about-marquee__dot">•</span>
+				<img class="about-marquee__bant" :src="isDark ? $asset('/pictures-about/bant-light.png') : $asset('/pictures-about/bant-dark.png')" alt="">
 				<span class="about-marquee__item">magical moments</span>
-				<span class="about-marquee__dot">•</span>
+				<img class="about-marquee__bant" :src="isDark ? $asset('/pictures-about/bant-light.png') : $asset('/pictures-about/bant-dark.png')" alt="">
 				<span class="about-marquee__item">student years</span>
-				<span class="about-marquee__dot">•</span>
+				<img class="about-marquee__bant" :src="isDark ? $asset('/pictures-about/bant-light.png') : $asset('/pictures-about/bant-dark.png')" alt="">
 			</span>
 			<span class="about-marquee__inner" aria-hidden="true">
 				<span class="about-marquee__item">life content</span>
-				<span class="about-marquee__dot">•</span>
+				<img class="about-marquee__bant" :src="isDark ? $asset('/pictures-about/bant-light.png') : $asset('/pictures-about/bant-dark.png')" alt="">
 				<span class="about-marquee__item">education</span>
-				<span class="about-marquee__dot">•</span>
+				<img class="about-marquee__bant" :src="isDark ? $asset('/pictures-about/bant-light.png') : $asset('/pictures-about/bant-dark.png')" alt="">
 				<span class="about-marquee__item">comfortable classes</span>
-				<span class="about-marquee__dot">•</span>
+				<img class="about-marquee__bant" :src="isDark ? $asset('/pictures-about/bant-light.png') : $asset('/pictures-about/bant-dark.png')" alt="">
 				<span class="about-marquee__item">working rhythm</span>
-				<span class="about-marquee__dot">•</span>
+				<img class="about-marquee__bant" :src="isDark ? $asset('/pictures-about/bant-light.png') : $asset('/pictures-about/bant-dark.png')" alt="">
 				<span class="about-marquee__item">magical moments</span>
-				<span class="about-marquee__dot">•</span>
+				<img class="about-marquee__bant" :src="isDark ? $asset('/pictures-about/bant-light.png') : $asset('/pictures-about/bant-dark.png')" alt="">
 			</span>
 		</div>
 	</div>
 </template>
 
 <script setup>
+import { useThemeStore } from '~/stores/theme'
+import { storeToRefs } from 'pinia'
+
+const { $asset } = useNuxtApp()
+const themeStore = useThemeStore()
+const { isDark } = storeToRefs(themeStore)
 </script>
 
 <style lang="stylus">
-@keyframes marquee
-  from
+@keyframes marquee {
+  from {
     transform translateX(0)
-  to
+  }
+  to {
     transform translateX(-50%)
+  }
+}
 
-.about-marquee
+.about-marquee {
   width 100%
   overflow hidden
   background var(--main)
   padding 22px 0
 
-  &__track
+  &__track {
     display flex
     width max-content
-    animation marquee 25s linear infinite
+    animation marquee 45s linear infinite
+  }
 
-  &__inner
+  &__inner {
     display flex
-    align-items center
+    align-items flex-start
     white-space nowrap
+  }
 
-  &__item
+  &__item {
     font-family var(--main-font-edwardianscript)
     font-size 4rem
     color var(--brown)
-    padding 0 28px
+    padding 0 50px
+  }
 
-  &__dot
-    font-size 3rem
-    color var(--brown)
+  &__bant {
     flex-shrink 0
+    width 129px
+    height 136px
+    object-fit contain
+  }
+}
 </style>

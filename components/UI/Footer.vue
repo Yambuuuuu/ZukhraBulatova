@@ -1,6 +1,22 @@
 <script setup>
 import SvgIcon from '~/components/UI/SvgIcon.vue'
+import { useContactsStore } from '~/stores/contacts'
+import { useThemeStore } from '~/stores/theme'
+import { storeToRefs } from 'pinia'
+
 const { contacts } = useContactsStore()
+const themeStore = useThemeStore()
+const { isDark } = storeToRefs(themeStore)
+
+const darkIconMap = {
+  'whatsup-contacts': 'whts-icon-dark',
+  'inst-contacts': 'inst-icon-dark',
+  'tg-contacts': 'tg-icon-dark',
+}
+
+function getIcon(icon) {
+  return isDark.value && darkIconMap[icon] ? darkIconMap[icon] : icon
+}
 </script>
 
 <template>
@@ -12,7 +28,7 @@ const { contacts } = useContactsStore()
 					<SvgIcon
 						v-for="contact in contacts"
 						:key="contact.id"
-						:icon="contact.icon"
+						:icon="getIcon(contact.icon)"
 						class="footer-icons-el"
 					/>
 				</div>

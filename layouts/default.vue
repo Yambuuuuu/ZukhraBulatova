@@ -20,7 +20,8 @@ import Footer from '~/components/UI/Footer.vue'
   flex-direction: column
 
 .main-content
-  flex: 1
+  flex: 1;
+  margin-top: 100px;
 
 header {
   padding: 20px;

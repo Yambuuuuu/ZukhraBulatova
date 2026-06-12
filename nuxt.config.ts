@@ -28,8 +28,12 @@ export default defineNuxtConfig({
   // Целевая среда
   devtools: { enabled: true },
 
+  devServer: {
+    port: 8084,
+  },
+
   // Модули
-  modules: ['@nuxt/eslint', '@nuxt/image', '@pinia/nuxt'],
+  modules: ['@nuxt/eslint', '@nuxt/image', '@pinia/nuxt', '@nuxt/fonts'],
 
   // Конфигурация @nuxt/image
   image: {

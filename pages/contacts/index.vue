@@ -8,6 +8,7 @@
 						<span class="contacts-header-text-first">C</span>
 						<span class="contacts-header-text-second">ONTACTS</span>
 					</div>
+					<span class="contacts-header-subtitle">Связаться со мной</span>
 				</div>
 				<div class="contacts-content">
 					<div class="contacts-content-left">
@@ -57,8 +58,15 @@ const { $asset } = useNuxtApp()
     align-items center
     justify-content center
     flex-direction column
-    margin-top 100px
     gap 70px
+
+    &-subtitle {
+      display flex
+      font-family var(--second-font-cormorant)
+      font-size 3rem
+      color var(--brown)
+      margin-top 30px
+    }
 
     &-text {
       display flex

@@ -12,6 +12,7 @@
 						<span class="about-main-header-word" data-text="A">A</span>
 						<span class="about-main-header-text">BOUT ME</span>
 					</div>
+					<span class="about-main-subtitle">Обо мне</span>
 					<div class="about-main-text">
 						<span class="about-main-text-inner">
 							Меня зовут Булатова Зухра Алескендеровна.
@@ -49,7 +50,6 @@ const { $asset } = useNuxtApp()
 <style lang="stylus">
 .about {
   display flex
-  margin-top 100px
 
   &__inner {
     display flex
@@ -99,6 +99,7 @@ const { $asset } = useNuxtApp()
       display flex
       justify-content center
       align-items center
+      padding-left 60px
 
       &-word {
         display flex
@@ -119,7 +120,7 @@ const { $asset } = useNuxtApp()
       &-text {
         display flex
         font-family var(--second-font-cormorant)
-        font-size 4.125rem
+        font-size 4rem
         position relative
         background-color var(--title-gradient)
         color transparent
@@ -127,6 +128,14 @@ const { $asset } = useNuxtApp()
         background-clip text
         text-shadow 0 3px 3px rgba(0, 0, 0, 0.15)
       }
+    }
+
+    &-subtitle {
+      display flex
+      font-family var(--second-font-cormorant)
+      font-size 3rem
+      color var(--brown)
+      margin-top 30px
     }
 
     &-text {

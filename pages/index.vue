@@ -79,7 +79,6 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
     gap 30px
     width 100%
     //grid-template-columns repeat(2, 1fr)
-    margin-top 135px
     height 100%
     overflow visible
   }
