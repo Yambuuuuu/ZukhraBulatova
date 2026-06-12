@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="reviews__inner">
 				<div class="reviews-art">
-					<AboutMainArtGroup />
+					<ArtComponent />
 				</div>
 				<div class="reviews-header">
 					<span class="reviews-header-word reviews-header-word-r" data-text="R">R</span>
@@ -14,8 +14,8 @@
 		</div>
 		<img class="reviews-pattern" :src="isDark ? $asset('/reviews-img/uzor-light.png') : $asset('/reviews-img/uzor-dark.png')" alt="">
 		<div
-			class="reviews-items"
 			ref="sliderRef"
+			class="reviews-items"
 			@mousedown="onMouseDown"
 			@mouseleave="onMouseLeave"
 			@mouseup="onMouseUp"
@@ -26,9 +26,14 @@
 			<ReviewCard
 				v-for="review in reviews"
 				:key="review.id"
+				class="reviews-item"
 			>
-				<template #title>{{ review.title }}</template>
-				<template #text>{{ review.text }}</template>
+				<template #title>
+					{{ review.title }}
+				</template>
+				<template #text>
+					{{ review.text }}
+				</template>
 			</ReviewCard>
 		</div>
 	</div>
@@ -41,6 +46,7 @@ import ReviewCard from '~/components/features/ReviewCard.vue'
 import { useThemeStore } from '~/stores/theme'
 import { useReviewsStore } from '~/stores/reviews'
 import { storeToRefs } from 'pinia'
+import ArtComponent from '~/components/features/ArtComponent.vue'
 
 definePageMeta({
   title: 'Отзывы',
@@ -127,7 +133,7 @@ function onTouchMove(e) {
   &-items {
     display flex
     flex-wrap nowrap
-    gap 40px
+    gap 126px
     padding 0 38px 80px
     overflow-x scroll
     cursor grab
@@ -140,6 +146,10 @@ function onTouchMove(e) {
       cursor grabbing
     }
   }
+
+	&-item {
+		min-width 30%
+	}
 
   &-subtitle {
     display flex
@@ -190,11 +200,5 @@ function onTouchMove(e) {
       text-shadow 0 3px 3px rgba(0, 0, 0, 0.15)
     }
   }
-
-  &-items {
-    display flex
-    gap 25px
-  }
-
 }
 </style>

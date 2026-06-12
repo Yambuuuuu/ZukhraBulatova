@@ -89,20 +89,22 @@ function closeMenu() {
     gap 60px
   }
 
-  &-icon {
-    width 125px
-    height 125px
-  }
+	&-logo {
+		display flex
+		width 93px
+		height 93px
+	}
 
-  &-logo {
-    display flex
+  &-icon {
+		width 93px
+		height 93px
   }
 
   &-right {
     display flex
     width 100%
-    gap 40px
-    justify-content space-between
+    gap 70px
+    justify-content center
     align-items center
   }
 
@@ -112,6 +114,12 @@ function closeMenu() {
     text-transform uppercase
     color var(--main)
     text-decoration none
+		border: 1px solid transparent
+		transition 0.2s border-color
+
+		&.router-link-active {
+			border-bottom: 1px solid
+		}
   }
 
   &-toggle {

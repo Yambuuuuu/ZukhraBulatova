@@ -34,7 +34,7 @@ const { isDark } = storeToRefs(themeStore)
 
   &__frame {
     display block
-    width 300px
+    width 100%
     height auto
   }
 
@@ -55,17 +55,17 @@ const { isDark } = storeToRefs(themeStore)
 
   &__title {
     font-family var(--main-font-edwardianscript)
-    font-size 2rem
+    font-size 4rem
     color var(--brown)
     text-align center
   }
 
   &__text {
     font-family var(--second-font-cormorant)
-    font-size 1.1rem
+    font-size 2rem
     color var(--brown)
     text-align center
-    line-height 1.5
+    line-height 1
   }
 }
 </style>

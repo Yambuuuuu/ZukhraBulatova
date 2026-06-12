@@ -95,7 +95,7 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
     .home-right-info-title-inner {
       display flex
       margin-top 60px
-      width 100%
+      //width 100%
       height 100%
     }
   }

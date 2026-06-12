@@ -15,10 +15,12 @@
 					<span>В моём telegram- канале собрана базовая обучающая программа. Здесь каждая сможет найти удобный для себя формат. Вход в канал 5000 р.
 						почему стоит остаться?
 						для преподователей: готовые идеи для уроков, которые сэкономят ваше время.
-						Для изучающих: структурированные материалы для асмостоятельного погружения в язык.
+						Для изучающих: структурированные материалы для самостоятельного погружения в язык.
 						Для всех: вдохновение и поддержка на каждом этапе обучения.
 					</span>
-					<img class="blog-description-btn" :src="$asset('/blog-img/blog-button.png')" alt="">
+					<ButtonComponent>
+						<img class="blog-description-btn" :src="$asset('/blog-img/blog-button.png')" alt="">
+					</ButtonComponent>
 				</div>
 				<div class="blog-features">
 					<span class="blog-features-header">Что вас ждёт:</span>
@@ -33,6 +35,7 @@
 import AboutMainArtGroup from '~/components/features/AboutMainArtGroup.vue'
 import { useThemeStore } from '~/stores/theme'
 import { storeToRefs } from 'pinia'
+import ButtonComponent from '~/components/UI/ButtonComponent.vue'
 
 definePageMeta({
   title: 'Блог',

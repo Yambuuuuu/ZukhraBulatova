@@ -6,9 +6,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   // Основные настройки
   app: {
-    baseURL: '/ZukhraBulatova/',
     head: {
-      title: 'Zukhra Bulatova',
       htmlAttrs: {
         lang: 'ru',
       },
@@ -46,6 +44,13 @@ export default defineNuxtConfig({
 
   // Конфигурация Vite (Stylus preprocessor)
   vite: {
+    optimizeDeps: {
+      include: [
+        '@vue/devtools-core',
+        '@vue/devtools-kit',
+        'vue-inline-svg',
+      ],
+    },
     css: {
       preprocessorOptions: {
         stylus: {

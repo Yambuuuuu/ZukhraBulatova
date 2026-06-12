@@ -21,6 +21,9 @@
 							:text="contact.text"
 							:icon="contact.icon"
 						/>
+						<span class="contacts-content-right__notice">
+							*Instagram и whatsApp принадлежат компании Meta, деятельность которой признана экстремистской и запрещена в РФ
+						</span>
 					</div>
 				</div>
 			</div>
@@ -98,14 +101,26 @@ const { $asset } = useNuxtApp()
     width 100%
 
     &-left {
+			width: 600px;
+			flex-shrink 0
 
+			img {
+				width: 100%;
+			}
     }
 
     &-right {
       display flex
       gap 25px
       flex-direction column
-      margin-top 190px
+      margin-top 150px
+
+			&__notice {
+				padding-top 23px
+				font-size 1.5rem
+				line-height 1.1
+				color: var(--brown)
+			}
     }
   }
 }

@@ -14,6 +14,14 @@ const themeStore = useThemeStore()
 onMounted(() => {
   themeStore.initTheme()
 })
+
+useSeoMeta({
+  title: 'Zukhra Bulatova',
+  ogTitle: 'Zukhra Bulatova',
+  description: 'Сайт Зухры Булатовой',
+  ogDescription: 'Сайт Зухры Булатовой',
+  ogImage: '/svg/logo.svg',
+})
 </script>
 
 <style lang="stylus">
