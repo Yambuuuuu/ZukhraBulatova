@@ -58,7 +58,6 @@ const { $asset } = useNuxtApp()
     align-items center
     justify-content center
     flex-direction column
-    gap 70px
 
     &-subtitle {
       display flex
@@ -66,12 +65,15 @@ const { $asset } = useNuxtApp()
       font-size 3rem
       color var(--brown)
       margin-top 30px
+      align-items center
+      justify-content center
     }
 
     &-text {
       display flex
       position relative
       padding-left 7rem
+      margin-top 50px
 
       &-first {
         display flex
