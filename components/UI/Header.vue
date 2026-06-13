@@ -188,13 +188,13 @@ function closeMenu() {
   }
 
   +below(1045px) {
-    padding 35px 30px
+    padding 20px 30px
 
     &__inner {
       justify-content space-between
       align-items center
       gap 0
-      min-height 125px
+      max-height 126px
       position relative
     }
 
@@ -203,9 +203,13 @@ function closeMenu() {
     }
 
     &-logo {
-      position absolute
-      left 50%
-      transform translateX(-50%)
+      width 88px
+      height 88px
+    }
+
+    &-icon {
+      width 88px
+      height 88px
     }
 
     &-right {

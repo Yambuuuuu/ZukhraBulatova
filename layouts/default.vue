@@ -14,16 +14,22 @@ import Footer from '~/components/UI/Footer.vue'
 </script>
 
 <style lang="stylus">
-.layout
+.layout {
   min-height: 100vh
   display: flex
   flex-direction: column
+}
 
-.main-content
+.main-content {
   flex: 1;
   margin-top: 100px;
 
-header {
+  +below(900px) {
+    margin-top: 20px;
+  }
+}
+
+.header {
   padding: 20px;
   background-color: #f5f5f5;
   margin-bottom: 20px;

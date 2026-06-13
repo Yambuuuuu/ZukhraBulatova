@@ -110,7 +110,7 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
     width 100%
     overflow visible
 
-    +below(1000px) {
+    +below(1350px) {
       display flex
       flex-direction column
     }
@@ -121,7 +121,7 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
     align-items flex-start
     gap 175px
 
-    +below(1000px) {
+    +below(1350px) {
       display none
     }
   }
@@ -129,25 +129,40 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
   &__welcome-adaptive {
     display none
 
-    +below(1000px) {
+    +below(1350px) {
       display flex
       flex-direction column
       align-items center
       gap 30px
+
     }
   }
 
   &-title {
     display flex
     align-self start
-    width 100%
+    //width 100%
     overflow visible
     gap 58px
+    justify-content center
+    text-align center
 
     .home-right-info-title-inner {
       display flex
-      margin-top 60px
+      margin-top 20px
       height 100%
+    }
+
+    +below(1350px) {
+      width 100%
+    }
+
+    +below(900px) {
+      gap 20px
+    }
+
+    +below(500px) {
+      gap 5px
     }
   }
 
@@ -165,6 +180,7 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
       align-items flex-start
       gap 14px
       overflow visible
+      //margin-top 80px
 
       &-text {
         flex-direction column
@@ -192,6 +208,10 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
       background-clip text
       text-shadow 0 4px 4px rgba(0, 0, 0, 0.25)
 
+      +below(900px) {
+        font-size 3.75rem
+      }
+
       &-z {
         display flex
         height 100%
@@ -199,6 +219,14 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
         max-width 150px
         position absolute
         transform translate(-5px, -62%)
+
+        +below(900px) {
+          transform translate(30%, -26%)
+        }
+
+        +below(500px) {
+          transform translate(-27%, -26%)
+        }
       }
 
       &-b {
@@ -206,6 +234,11 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
         position absolute
         transform translate(-20%, -43%)
         max-width 200px
+
+        +below(900px) {
+          transform translate(30px, -40%)
+          max-width 100px
+        }
       }
     }
 
@@ -219,9 +252,22 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
       background-clip text
       text-shadow 0 4px 4px rgba(0, 0, 0, 0.25)
 
+      +below(900px) {
+        font-size 1.875rem
+      }
+
+      +below(500px) {
+        font-size 1.5rem
+      }
+
       &-ukhra {
         display flex
         padding-left 85px
+
+        +below(500px) {
+          display flex
+          padding-left 0
+        }
       }
 
       &-ulatova {
@@ -258,7 +304,7 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
     height 440px
     position relative
 
-    +below(1000px) {
+    +below(1350px) {
       align-self center
       margin-top 25px
       margin-bottom -30px
@@ -270,15 +316,15 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
       position absolute
 			top: 50%
 			left: 40px
-			transform translate(0, -50%)
+			transform translate(0, -60%)
 			min-width: 360px
 			min-height: 552px
 			object-fit: contain
       z-index 1
 
-      +below(1000px) {
-        max-width 281px
-        height 430px
+      +below(1350px) {
+        min-width: 281px
+        min-height: 430px
         object-fit contain
       }
     }
@@ -290,7 +336,7 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
       aspect-ratio 275 / 440
       background-color var(--rectangle-bg)
 
-      +below(1000px) {
+      +below(1350px) {
         max-width 214px
         height 329px
       }
