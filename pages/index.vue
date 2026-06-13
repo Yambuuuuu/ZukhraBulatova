@@ -69,8 +69,9 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
   &__inner {
     display grid
     grid-template-columns auto 1fr
-    grid-template-rows auto auto auto
-    gap 30px
+    grid-template-rows min-content auto auto
+    column-gap 80px
+    row-gap 40px
     width 100%
     overflow visible
 
@@ -84,6 +85,7 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
     grid-column 2
     grid-row 1
     display flex
+    align-self start
     width 100%
     overflow visible
     gap 58px
