@@ -16,38 +16,41 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
 	<div class="home">
 		<div class="container">
 			<div class="home__inner">
-				<div class="home-title">
-					<div class="home-right-info-title-inner">
-						<span class="home-right-word home-right-word-z" data-text="Z">Z</span>
-						<span class="home-right-text home-right-text-ukhra" data-text="UKHRA">UKHRA</span>
+				<div class="home__welcome">
+					<div class="home-left">
+						<img
+							class="home-left-main"
+							:src="$asset('/img/main-photo.png')"
+							alt=""
+						>
+						<span class="home-left-down"></span>
 					</div>
-					<div class="home-right-info-title-inner">
-						<span class="home-right-word home-right-word-b" data-text="B">B</span>
-						<span class="home-right-text home-right-text-ulatova" data-text="ULATOVA">ULATOVA</span>
-					</div>
-				</div>
-				<div class="home-left">
-					<img
-						class="home-left-main"
-						:src="$asset('/img/main-photo.png')"
-						alt=""
-					>
-					<span class="home-left-down"></span>
-				</div>
-				<div class="home-right">
-					<div class="home-right-info">
-						<div class="home-right-info-text">
-							<span>
-								Язык - это элегантность мысли и мост между вами и миром.
-								Учить язык - значит не только говорить красиво, но и видеть глубже!
-							</span>
+					<div class="home-right">
+						<div class="home-title">
+							<div class="home-right-info-title-inner">
+								<span class="home-right-word home-right-word-z" data-text="Z">Z</span>
+								<span class="home-right-text home-right-text-ukhra" data-text="UKHRA">UKHRA</span>
+							</div>
+							<div class="home-right-info-title-inner">
+								<span class="home-right-word home-right-word-b" data-text="B">B</span>
+								<span class="home-right-text home-right-text-ulatova" data-text="ULATOVA">ULATOVA</span>
+							</div>
+						</div>
+						<div class="home-right-info">
+							<div class="home-right-info-text">
+								<span>
+									Язык - это элегантность мысли и мост между вами и миром.
+									Учить язык - значит не только говорить красиво, но и видеть глубже!
+								</span>
+							</div>
+						</div>
+						<div class="home-right-pictures">
+							<span class="home-right-pictures-rectangle"></span>
+							<img class="home-right-pictures-town" :src="$asset('/img/town.png')" alt="">
 						</div>
 					</div>
-					<div class="home-right-pictures">
-						<span class="home-right-pictures-rectangle"></span>
-						<img class="home-right-pictures-town" :src="$asset('/img/town.png')" alt="">
-					</div>
 				</div>
+
 				<div class="home-advantages">
 					<HomeAdvantagesComponent
 						v-for="advantage in advantages"
@@ -65,13 +68,12 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
 .home {
   display flex
   width 100%
+	padding-top: 35px
 
   &__inner {
-    display grid
-    grid-template-columns auto 1fr
-    grid-template-rows min-content auto auto
-    column-gap 80px
-    row-gap 40px
+    display flex
+		flex-direction: column
+    gap 80px
     width 100%
     overflow visible
 
@@ -80,6 +82,12 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
       flex-direction column
     }
   }
+
+	&__welcome {
+		display flex
+		align-items flex-start
+		gap: 175px
+	}
 
   &-title {
     grid-column 2
@@ -105,10 +113,7 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
   &-right {
     display flex
     flex-direction column
-    grid-column 2
-    grid-row 2
-    max-width 790px
-    width 100%
+		flex-grow: 1
     min-width 0
     height 100%
     overflow visible
@@ -127,7 +132,7 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
       &-text {
         flex-direction column
         display flex
-        max-width 100%
+        max-width 790px
         font-family var(--second-font-cormorant)
         font-size 2rem
         color var(--title-gradient)
@@ -212,14 +217,9 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
 
   &-left {
     display flex
-    grid-column 1
-    grid-row 1 / 3
-    max-width 400px
-    width 100%
-    min-width 250px
+    width 275px
+    height 440px
     position relative
-    min-height 550px
-    overflow visible
 
     +below(1000px) {
       order 2
@@ -232,12 +232,13 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
     &-main {
       display flex
       position absolute
-      transform translate(15%, -5%)
-      max-width 339px
-      width 100%
-      height auto
-      aspect-ratio 339 / 523
-      z-index 10
+			top: 50%
+			left: 40px
+			transform translate(0, -50%)
+			min-width: 360px
+			min-height: 552px
+			object-fit: contain
+      z-index 1
 
       +below(1000px) {
         max-width 281px
@@ -248,10 +249,9 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
 
     &-down {
       display flex
-      max-width 275px
       width 100%
-      height 422px
-      aspect-ratio 275 / 422
+      height 100%
+      aspect-ratio 275 / 440
       background-color var(--rectangle-bg)
 
       +below(1000px) {
