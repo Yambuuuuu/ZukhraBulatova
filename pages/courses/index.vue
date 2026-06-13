@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="courses__inner">
 				<div class="courses-art">
-					<AboutMainArtGroup />
+					<ArtComponent />
 				</div>
 				<div class="courses-header">
 					<span class="courses-header-word courses-header-word-c" data-text="C">C</span>
@@ -57,7 +57,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import AboutMainArtGroup from '~/components/features/AboutMainArtGroup.vue'
+import ArtComponent from '~/components/features/ArtComponent.vue'
 import { useThemeStore } from '~/stores/theme'
 import { storeToRefs } from 'pinia'
 
@@ -127,15 +127,6 @@ function onTouchMove(e) {
     width 100%
     justify-content center
     align-items flex-start
-
-    :deep(.about-main-art-group) {
-      display flex
-      flex 1
-      justify-content center
-      align-items center
-      gap 30px
-      margin-top -25px
-    }
   }
 
   &-items {

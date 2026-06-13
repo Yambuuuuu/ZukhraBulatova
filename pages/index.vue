@@ -51,6 +51,39 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
 					</div>
 				</div>
 
+				<div class="home__welcome-adaptive">
+					<div class="home-title">
+						<div class="home-right-info-title-inner">
+							<span class="home-right-word home-right-word-z" data-text="Z">Z</span>
+							<span class="home-right-text home-right-text-ukhra" data-text="UKHRA">UKHRA</span>
+						</div>
+						<div class="home-right-info-title-inner">
+							<span class="home-right-word home-right-word-b" data-text="B">B</span>
+							<span class="home-right-text home-right-text-ulatova" data-text="ULATOVA">ULATOVA</span>
+						</div>
+					</div>
+					<div class="home-left">
+						<img
+							class="home-left-main"
+							:src="$asset('/img/main-photo.png')"
+							alt=""
+						>
+						<span class="home-left-down"></span>
+					</div>
+					<div class="home-right-info">
+						<div class="home-right-info-text">
+							<span>
+								Язык - это элегантность мысли и мост между вами и миром.
+								Учить язык - значит не только говорить красиво, но и видеть глубже!
+							</span>
+						</div>
+					</div>
+					<div class="home-right-pictures">
+						<span class="home-right-pictures-rectangle"></span>
+						<img class="home-right-pictures-town" :src="$asset('/img/town.png')" alt="">
+					</div>
+				</div>
+
 				<div class="home-advantages">
 					<HomeAdvantagesComponent
 						v-for="advantage in advantages"
@@ -83,29 +116,37 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
     }
   }
 
-	&__welcome {
-		display flex
-		align-items flex-start
-		gap: 175px
-	}
+  &__welcome {
+    display flex
+    align-items flex-start
+    gap 175px
+
+    +below(1000px) {
+      display none
+    }
+  }
+
+  &__welcome-adaptive {
+    display none
+
+    +below(1000px) {
+      display flex
+      flex-direction column
+      align-items center
+      gap 30px
+    }
+  }
 
   &-title {
-    grid-column 2
-    grid-row 1
     display flex
     align-self start
     width 100%
     overflow visible
     gap 58px
 
-    +below(1000px) {
-      order 1
-    }
-
     .home-right-info-title-inner {
       display flex
       margin-top 60px
-      //width 100%
       height 100%
     }
   }
@@ -117,10 +158,6 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
     min-width 0
     height 100%
     overflow visible
-
-    +below(1000px) {
-      order 3
-    }
 
     &-info {
       display flex
@@ -222,7 +259,6 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
     position relative
 
     +below(1000px) {
-      order 2
       align-self center
       margin-top 25px
       margin-bottom -30px
@@ -264,16 +300,10 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
   &-advantages {
     display grid
     grid-template-columns repeat(3, 1fr)
-    grid-column 1 / 3
-    grid-row 3
     gap 40px
     margin-top 30px
     width 100%
     max-height 170px
-
-    +below(1000px) {
-      order 4
-    }
   }
 }
 </style>

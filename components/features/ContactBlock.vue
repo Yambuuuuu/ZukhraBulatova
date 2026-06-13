@@ -1,5 +1,10 @@
 <template>
-	<div class="contacts-content-right-block">
+	<a
+		class="contacts-content-right-block"
+		:href="link"
+		target="_blank"
+		rel="noopener noreferrer"
+	>
 		<img
 			class="contacts-content-right-block__frame"
 			:src="isDark ? $asset('/contacts-img/box-light.png') : $asset('/contacts-img/box-dark.png')"
@@ -9,7 +14,7 @@
 			<SvgIcon :icon="props.icon" />
 			<span>{{ text }}</span>
 		</div>
-	</div>
+	</a>
 </template>
 
 <script setup>
@@ -30,6 +35,10 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  link: {
+    type: String,
+    required: true,
+  },
 })
 </script>
 
@@ -39,6 +48,12 @@ const props = defineProps({
   display flex
   align-items center
   cursor pointer
+  text-decoration none
+  transition 0.2s filter
+
+  &:hover {
+    filter brightness(0.9)
+  }
 
   &__frame {
     display block

@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="blog__inner">
 				<div class="blog-art">
-					<AboutMainArtGroup />
+					<ArtComponent />
 				</div>
 				<div class="blog-header">
 					<span class="blog-header-word blog-header-word-b" data-text="B">B</span>
@@ -32,7 +32,7 @@
 </template>
 
 <script setup>
-import AboutMainArtGroup from '~/components/features/AboutMainArtGroup.vue'
+import ArtComponent from '~/components/features/ArtComponent.vue'
 import { useThemeStore } from '~/stores/theme'
 import { storeToRefs } from 'pinia'
 import ButtonComponent from '~/components/UI/ButtonComponent.vue'
@@ -62,15 +62,6 @@ const { isDark } = storeToRefs(themeStore)
     width 100%
     justify-content center
     align-items flex-start
-
-    :deep(.about-main-art-group) {
-      display flex
-      flex 1
-      justify-content center
-      align-items center
-      gap 30px
-      margin-top -25px
-    }
   }
 
   &-subtitle {

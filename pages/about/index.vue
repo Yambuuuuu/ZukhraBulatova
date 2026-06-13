@@ -5,7 +5,7 @@
 				<div class="about-main">
 					<div class="about-main-art">
 						<img class="about-main-art-left" :src="$asset('/svg/about_decor.svg')" alt="">
-						<AboutMainArtGroup />
+						<ArtComponent />
 						<img class="about-main-art-right" :src="$asset('/svg/about_decor.svg')" alt="">
 					</div>
 					<div class="about-main-header">
@@ -35,7 +35,7 @@
 </template>
 
 <script setup>
-import AboutMainArtGroup from '~/components/features/AboutMainArtGroup.vue'
+import ArtComponent from '~/components/features/ArtComponent.vue'
 import AboutPlayerComponent from '~/components/features/AboutPlayerComponent.vue'
 import AboutSliderComponent from '~/components/features/AboutSliderComponent.vue'
 import AboutMarquee from '~/components/features/AboutMarquee.vue'
@@ -68,26 +68,9 @@ const { $asset } = useNuxtApp()
       justify-content space-between
       align-items flex-start
 
-      &-group {
-        display flex
-        flex 1
-        justify-content center
-        align-items center
-        gap 30px
-        margin-top -25px
-      }
-
       &-left {
         display flex
         transform scaleX(-1)
-      }
-
-      &-line {
-
-      }
-
-      &-center {
-
       }
 
       &-right {

@@ -41,12 +41,11 @@
 
 <script setup>
 import { ref } from 'vue'
-import AboutMainArtGroup from '~/components/features/AboutMainArtGroup.vue'
+import ArtComponent from '~/components/features/ArtComponent.vue'
 import ReviewCard from '~/components/features/ReviewCard.vue'
 import { useThemeStore } from '~/stores/theme'
 import { useReviewsStore } from '~/stores/reviews'
 import { storeToRefs } from 'pinia'
-import ArtComponent from '~/components/features/ArtComponent.vue'
 
 definePageMeta({
   title: 'Отзывы',
@@ -112,15 +111,6 @@ function onTouchMove(e) {
     width 100%
     justify-content center
     align-items flex-start
-
-    :deep(.about-main-art-group) {
-      display flex
-      flex 1
-      justify-content center
-      align-items center
-      gap 30px
-      margin-top -25px
-    }
   }
 
   &-pattern {

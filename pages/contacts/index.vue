@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="contacts__inner">
 				<div class="contacts-header">
-					<AboutMainArtGroup />
+					<ArtComponent />
 					<div class="contacts-header-text">
 						<span class="contacts-header-text-first">C</span>
 						<span class="contacts-header-text-second">ONTACTS</span>
@@ -20,6 +20,7 @@
 							:key="contact.id"
 							:text="contact.text"
 							:icon="contact.icon"
+							:link="contact.link"
 						/>
 						<span class="contacts-content-right__notice">
 							*Instagram и whatsApp принадлежат компании Meta, деятельность которой признана экстремистской и запрещена в РФ
@@ -32,7 +33,7 @@
 </template>
 
 <script setup>
-import AboutMainArtGroup from '~/components/features/AboutMainArtGroup.vue'
+import ArtComponent from '~/components/features/ArtComponent.vue'
 import ContactBlock from '~/components/features/ContactBlock.vue'
 import { useContactsStore } from '~/stores/contacts'
 
@@ -76,7 +77,7 @@ const { $asset } = useNuxtApp()
       display flex
       position relative
       padding-left 7rem
-      margin-top 50px
+      margin-top 75px
 
       &-first {
         display flex

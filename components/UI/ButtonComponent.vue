@@ -12,10 +12,11 @@
 	background none
 	outline none
 	border none
-	transition 0.2s filter
+	transition: 0.2s filter;
+  cursor: pointer;
 
 	&:hover {
-		filter: brightness(0.9)
+		filter: brightness(0.9);
 	}
 }
 </style>
