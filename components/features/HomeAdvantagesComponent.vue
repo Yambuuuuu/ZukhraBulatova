@@ -35,7 +35,7 @@ const props = defineProps({
 .advantages {
 	display flex
 	flex-direction column
-	gap 16px
+	gap: 16px
 	padding 16px 22px 0 22px
 	font-family var(--second-font-cormorant)
 	align-items center
@@ -43,6 +43,13 @@ const props = defineProps({
 	width 100%
 	border-bottom 1px solid var(--brown)
 	position relative
+
+	+below(990px) {
+		padding: 8px 16px 0 16px
+	}
+	+below(500px) {
+		padding: 8px 0 0
+	}
 
 	&:not(:last-child)::after {
 		content: ''
@@ -52,6 +59,11 @@ const props = defineProps({
 		bottom -20px
 		width 1px
 		background-color var(--brown)
+
+		+below(500px) {
+			top: 8px
+			bottom: 8px
+		}
 	}
 
 	&-icon {
@@ -59,6 +71,15 @@ const props = defineProps({
 		align-items center
 		justify-content center
 		height 54px
+
+		+below(500px) {
+			height: 30px
+		}
+
+		.icon {
+			height 100%
+			width 100%
+		}
 	}
 
 	&-content {
@@ -76,6 +97,15 @@ const props = defineProps({
 		width 100%
 		font-size 1.375rem
 		flex-shrink 0
+
+		+below(990px) {
+			font-size 1rem
+			line-height 1.1
+		}
+		+below(500px) {
+			font-size 0.875rem
+			padding-bottom 12px
+		}
 	}
 }
 </style>

@@ -50,9 +50,19 @@ function getIcon(icon) {
   padding 30px
   z-index 100
 
+	+below(990px) {
+		height: 120px
+	}
+	+below(500px) {
+		margin-top: 55px
+		height: 95px
+		padding: 0
+	}
+
   &__inner {
     display flex
     justify-content: space-between;
+		gap: 20px
   }
 
   &-text {
@@ -60,16 +70,35 @@ function getIcon(icon) {
     color var(--main)
     font-size 2rem
     font-family var(--second-font-cormorant)
+
+		+below(990px) {
+			font-size 1.5rem
+		}
   }
 
   &-icons {
     display flex
+		align-items: center
     gap 28px
 
+		+below(500px) {
+			gap: 10px
+		}
+
     &-el {
+			display: flex
       width 39px
       height 39px
       cursor pointer
+
+			+below(990px) {
+				width 32px
+				height 32px
+			}
+			+below(500px) {
+				width 24px
+				height 24px
+			}
     }
   }
 }

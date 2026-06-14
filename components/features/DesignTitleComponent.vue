@@ -12,32 +12,32 @@ defineProps({
 </script>
 
 <template>
-	<div class="test-container">
-		<span class="test-first-letter">{{ first }}</span>
-		<span class="test-rest-letters">{{ rest }}</span>
+	<div class="design-title">
+		<span class="design-title__first-letter">{{ first }}</span>
+		<span class="design-title__rest-letters">{{ rest }}</span>
 	</div>
 </template>
 
-<style scoped lang="stylus">
-.test-container {
+<style lang="stylus">
+.design-title {
 	display flex
 	align-items baseline
 	gap: 1rem
-}
 
-.test-first-letter {
-	font-family var(--main-font-edwardianscript)
-	font-size 8.75rem
-	line-height 1
-	color var(--title-gradient)
-	text-shadow 0 4px 4px rgba(0, 0, 0, 0.25)
-}
+	&__first-letter {
+		font-family var(--main-font-edwardianscript)
+		font-size 8.75rem
+		line-height 1
+		color var(--title-gradient)
+		text-shadow 0 4px 4px rgba(0, 0, 0, 0.25)
+	}
 
-.test-rest-letters {
-	font-family var(--main-font-traditional-arabic)
-	font-size 4.125rem
-	line-height 1
-	color var(--title-gradient)
-	text-shadow 0 4px 4px rgba(0, 0, 0, 0.25)
+	&__rest-letters {
+		font-family var(--main-font-traditional-arabic)
+		font-size 4.125rem
+		line-height 1
+		color var(--title-gradient)
+		text-shadow 0 4px 4px rgba(0, 0, 0, 0.25)
+	}
 }
 </style>

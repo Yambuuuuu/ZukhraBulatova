@@ -15,6 +15,14 @@ function toggleMenu() {
 function closeMenu() {
   menuOpen.value = false
 }
+
+function handleClickOutside() {
+  // Если меню закрыто — ничего не делаем
+  if (!menuOpen.value) return
+
+  // Иначе закрываем
+  closeMenu()
+}
 </script>
 
 <template>
@@ -54,7 +62,11 @@ function closeMenu() {
 			</div>
 		</div>
 
-		<div class="navbar-menu" :class="{ 'is-open': menuOpen }">
+		<div
+			v-click-outside="{ handler: handleClickOutside, exclude: '.navbar-burger' }"
+			class="navbar-menu"
+			:class="{ 'is-open': menuOpen }"
+		>
 			<NuxtLink to="/about" class="navbar-menu__link" @click="closeMenu">
 				Обо мне
 			</NuxtLink>
@@ -168,9 +180,9 @@ function closeMenu() {
     left 0
     background-color var(--brown)
     padding 24px 32px
-    gap 16px
+    gap: 16px
     z-index 999
-    width fit-content
+    width 100%
     box-shadow 4px 4px 20px rgba(0,0,0,0.2)
 
     &.is-open {

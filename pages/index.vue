@@ -2,6 +2,7 @@
 import HomeAdvantagesComponent from '~/components/features/HomeAdvantagesComponent.vue'
 import { useAdvantagesStore } from '~/stores/advantages'
 import { computed } from 'vue'
+import HomeTitle from '~/components/pages/home/HomeTitle.vue'
 
 definePageMeta({
   title: 'Главная',
@@ -17,6 +18,8 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
 		<div class="container">
 			<div class="home__inner">
 				<div class="home__welcome">
+					<HomeTitle class="home__welcome-title home__welcome-title--mobile" />
+
 					<div class="home-left">
 						<img
 							class="home-left-main"
@@ -26,16 +29,7 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
 						<span class="home-left-down"></span>
 					</div>
 					<div class="home-right">
-						<div class="home-title">
-							<div class="home-right-info-title-inner">
-								<span class="home-right-word home-right-word-z" data-text="Z">Z</span>
-								<span class="home-right-text home-right-text-ukhra" data-text="UKHRA">UKHRA</span>
-							</div>
-							<div class="home-right-info-title-inner">
-								<span class="home-right-word home-right-word-b" data-text="B">B</span>
-								<span class="home-right-text home-right-text-ulatova" data-text="ULATOVA">ULATOVA</span>
-							</div>
-						</div>
+						<HomeTitle class="home__welcome-title" />
 						<div class="home-right-info">
 							<div class="home-right-info-text">
 								<span>
@@ -48,39 +42,6 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
 							<span class="home-right-pictures-rectangle"></span>
 							<img class="home-right-pictures-town" :src="$asset('/img/town.png')" alt="">
 						</div>
-					</div>
-				</div>
-
-				<div class="home__welcome-adaptive">
-					<div class="home-title">
-						<div class="home-right-info-title-inner">
-							<span class="home-right-word home-right-word-z" data-text="Z">Z</span>
-							<span class="home-right-text home-right-text-ukhra" data-text="UKHRA">UKHRA</span>
-						</div>
-						<div class="home-right-info-title-inner">
-							<span class="home-right-word home-right-word-b" data-text="B">B</span>
-							<span class="home-right-text home-right-text-ulatova" data-text="ULATOVA">ULATOVA</span>
-						</div>
-					</div>
-					<div class="home-left">
-						<img
-							class="home-left-main"
-							:src="$asset('/img/main-photo.png')"
-							alt=""
-						>
-						<span class="home-left-down"></span>
-					</div>
-					<div class="home-right-info">
-						<div class="home-right-info-text">
-							<span>
-								Язык - это элегантность мысли и мост между вами и миром.
-								Учить язык - значит не только говорить красиво, но и видеть глубже!
-							</span>
-						</div>
-					</div>
-					<div class="home-right-pictures">
-						<span class="home-right-pictures-rectangle"></span>
-						<img class="home-right-pictures-town" :src="$asset('/img/town.png')" alt="">
 					</div>
 				</div>
 
@@ -114,6 +75,9 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
       display flex
       flex-direction column
     }
+		+below(500px) {
+			gap: 38px
+		}
   }
 
   &__welcome {
@@ -121,50 +85,27 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
     align-items flex-start
     gap 175px
 
-    +below(1350px) {
-      display none
-    }
+		+below(1350px) {
+			display flex
+			flex-direction column
+			align-items center
+			gap 0
+		}
   }
 
-  &__welcome-adaptive {
-    display none
+	&__welcome-title {
+		&:not(&--mobile) {
+			+below(1350px) {
+				display none
+			}
+		}
 
-    +below(1350px) {
-      display flex
-      flex-direction column
-      align-items center
-      gap 30px
-
-    }
-  }
-
-  &-title {
-    display flex
-    align-self start
-    //width 100%
-    overflow visible
-    gap 58px
-    justify-content center
-    text-align center
-
-    .home-right-info-title-inner {
-      display flex
-      margin-top 20px
-      height 100%
-    }
-
-    +below(1350px) {
-      width 100%
-    }
-
-    +below(900px) {
-      gap 20px
-    }
-
-    +below(500px) {
-      gap 5px
-    }
-  }
+		&--mobile {
+			+above(1351px) {
+				display none
+			}
+		}
+	}
 
   &-right {
     display flex
@@ -173,6 +114,13 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
     min-width 0
     height 100%
     overflow visible
+
+		+below(1350px) {
+			margin-top 60px
+		}
+		+below(500px) {
+			margin-top 43px
+		}
 
     &-info {
       display flex
@@ -197,85 +145,6 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
       }
     }
 
-    &-word {
-      display flex
-      width 100%
-      font-family var(--main-font-edwardianscript)
-      font-size 8.75rem
-      background-color var(--title-gradient)
-      color transparent
-      -webkit-background-clip text
-      background-clip text
-      text-shadow 0 4px 4px rgba(0, 0, 0, 0.25)
-
-      +below(900px) {
-        font-size 3.75rem
-      }
-
-      &-z {
-        display flex
-        height 100%
-        max-height 180px
-        max-width 150px
-        position absolute
-        transform translate(-5px, -62%)
-
-        +below(900px) {
-          transform translate(30%, -26%)
-        }
-
-        +below(500px) {
-          transform translate(-27%, -26%)
-        }
-      }
-
-      &-b {
-        display flex
-        position absolute
-        transform translate(-20%, -43%)
-        max-width 200px
-
-        +below(900px) {
-          transform translate(30px, -40%)
-          max-width 100px
-        }
-      }
-    }
-
-    &-text {
-      display flex
-      font-family var(--main-font-traditional-arabic)
-      font-size 4.125rem
-      background-color var(--title-gradient)
-      color transparent
-      -webkit-background-clip text
-      background-clip text
-      text-shadow 0 4px 4px rgba(0, 0, 0, 0.25)
-
-      +below(900px) {
-        font-size 1.875rem
-      }
-
-      +below(500px) {
-        font-size 1.5rem
-      }
-
-      &-ukhra {
-        display flex
-        padding-left 85px
-
-        +below(500px) {
-          display flex
-          padding-left 0
-        }
-      }
-
-      &-ulatova {
-        display flex
-        padding-left 90px
-      }
-    }
-
     &-pictures {
       display flex
       height 100%
@@ -283,17 +152,30 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
       margin-top 35px
 
       &-town {
-        max-width 791px
+				width: 100%
         height 121px
-        z-index 1000
+        z-index 1
+
+				+below(500px) {
+					height 56px
+				}
       }
 
       &-rectangle {
         width 592px
         height 97px
+				max-width: 100%
         position absolute
-        transform translate(27%, 45%)
+				bottom: -30px
+				right: 24px
         background-color var(--rectangle-bg)
+
+				+below(500px) {
+					width: 273px
+					height: 45px
+					bottom: -13px
+					right: 9px
+				}
       }
     }
   }
@@ -305,18 +187,24 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
     position relative
 
     +below(1350px) {
-      align-self center
-      margin-top 25px
-      margin-bottom -30px
-      min-height auto
+			width: 214px
+			height: 329px
+      margin-top 80px
     }
+		+below(500px) {
+			align-self flex-start
+			margin-left 43px
+		}
+		+below(400px) {
+			margin-left 20px
+		}
 
     &-main {
       display flex
       position absolute
 			top: 50%
 			left: 40px
-			transform translate(0, -60%)
+			transform translate(0, -52%)
 			min-width: 360px
 			min-height: 552px
 			object-fit: contain
@@ -325,8 +213,10 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
       +below(1350px) {
         min-width: 281px
         min-height: 430px
-        object-fit contain
       }
+			+below(500px) {
+				left 22px
+			}
     }
 
     &-down {
@@ -335,11 +225,6 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
       height 100%
       aspect-ratio 275 / 440
       background-color var(--rectangle-bg)
-
-      +below(1350px) {
-        max-width 214px
-        height 329px
-      }
     }
   }
 
@@ -349,7 +234,13 @@ const advantages = computed(() => advantagesStore.getAllAdvantages())
     gap 40px
     margin-top 30px
     width 100%
-    max-height 170px
+
+		+below(990px) {
+			margin-top 30px
+		}
+		+below(500px) {
+			gap: 30px
+		}
   }
 }
 </style>
