@@ -45,15 +45,18 @@ const themeStore = useThemeStore()
 const spaceBetween = ref(60)
 
 const updateSpaceBetween = () => {
+  if (!import.meta.client) return
   spaceBetween.value = window.innerWidth <= 800 ? 30 : 60
 }
 
 onMounted(() => {
+  if (!import.meta.client) return
   updateSpaceBetween()
   window.addEventListener('resize', updateSpaceBetween)
 })
 
 onBeforeUnmount(() => {
+  if (!import.meta.client) return
   window.removeEventListener('resize', updateSpaceBetween)
 })
 

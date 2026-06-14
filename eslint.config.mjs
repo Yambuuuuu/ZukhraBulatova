@@ -38,6 +38,8 @@ export default [
         createError: 'readonly',
         showError: 'readonly',
         clearError: 'readonly',
+        window: 'readonly',
+        document: 'readonly',
       },
     },
   },
