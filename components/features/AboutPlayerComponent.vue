@@ -163,12 +163,13 @@ onMounted(() => {
     display flex
     flex-direction column
     align-items center
+    justify-content center
     gap 12px
     width 100%
     max-width 500px
     max-height 180px
     position absolute
-    transform translate(35%, 35%)
+    transform translate(80%, 10%)
     inset 0
 
     +below(1000px) {
