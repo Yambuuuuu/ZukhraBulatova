@@ -21,5 +21,53 @@ const themeStore = useThemeStore()
   align-items center
   gap 30px
   margin-top -25px
+
+  +below(1500px) {
+    margin-top -18px;
+    gap 10px
+  }
+
+  +below(800px) {
+    margin-top -13px;
+    gap 10px
+  }
+
+  +below(500px) {
+    margin-top -13px;
+    gap 5px
+  }
+}
+
+.art-line {
+  +below(1500px) {
+    width 150px
+    height 1px
+  }
+
+  +below(800px) {
+    width 45px
+    height 1px
+  }
+
+  +below(500px) {
+    width 38px
+    height 1px
+  }
+
+  +below(400px) {
+    display none
+  }
+}
+
+.art-center {
+  +below(1500px) {
+    width 150px
+    height 36px
+  }
+
+  +below(800px) {
+    width 107px
+    height 29px
+  }
 }
 </style>

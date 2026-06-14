@@ -7,7 +7,7 @@
 		>
 		<Swiper
 			:slides-per-view="'auto'"
-			:space-between="60"
+			:space-between="spaceBetween"
 			:centered-slides="true"
 			:loop="true"
 			:grab-cursor="true"
@@ -36,10 +36,26 @@
 <script setup>
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import { useThemeStore } from '~/stores/theme'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import 'swiper/css'
 
 const { $asset } = useNuxtApp()
 const themeStore = useThemeStore()
+
+const spaceBetween = ref(60)
+
+const updateSpaceBetween = () => {
+  spaceBetween.value = window.innerWidth <= 800 ? 30 : 60
+}
+
+onMounted(() => {
+  updateSpaceBetween()
+  window.addEventListener('resize', updateSpaceBetween)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', updateSpaceBetween)
+})
 
 </script>
 
@@ -50,6 +66,10 @@ const themeStore = useThemeStore()
   overflow hidden
   position relative
   margin-top 20px
+
+  +below(800px) {
+    height 480px
+  }
 
   &-ellipse {
     display flex
@@ -66,12 +86,20 @@ const themeStore = useThemeStore()
       transform translate(0, -50px)
     }
 
+    +below(800px) {
+      transform translate(0, -20px)
+    }
+
     &-down {
       display flex
       position absolute
       z-index 10
       width 100%
       transform translate(0, -45px)
+
+      +below(800px) {
+        transform translate(0, -20px)
+      }
     }
   }
 
@@ -83,6 +111,10 @@ const themeStore = useThemeStore()
 
   .swiper-slide {
     width 506px
+
+    +below(800px) {
+      width 320px
+    }
   }
 
   &__img {
@@ -91,6 +123,11 @@ const themeStore = useThemeStore()
     object-fit cover
     display block
     position relative
+
+    +below(800px) {
+      width 320px
+      height 480px
+    }
   }
 }
 </style>

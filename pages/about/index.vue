@@ -71,10 +71,28 @@ const { $asset } = useNuxtApp()
       &-left {
         display flex
         transform scaleX(-1)
+
+        +below(1500px) {
+          width 120px
+          height 120px
+        }
+
+        +below(600px) {
+          width 65px
+          height 65px
+        }
       }
 
       &-right {
+        +below(1500px) {
+          width 120px
+          height 120px
+        }
 
+        +below(600px) {
+          width 65px
+          height 65px
+        }
       }
     }
 
@@ -83,12 +101,18 @@ const { $asset } = useNuxtApp()
       justify-content center
       align-items center
       padding-left 60px
+      position relative
+
+      +below(800px) {
+        display flex
+        padding-left 30px
+      }
 
       &-word {
         display flex
         max-width 575px
         position absolute
-        margin-bottom 35px
+        transform translate(-113px, -10%)
         width 100%
         font-family var(--main-font-edwardianscript)
         font-size 8.75rem
@@ -98,18 +122,26 @@ const { $asset } = useNuxtApp()
         background-clip text
         text-shadow 0 4px 4px rgba(0, 0, 0, 0.25)
         overflow visible
+
+        +below(800px) {
+          font-size 3.75rem
+          transform translate(-30%, -10%)
+        }
       }
 
       &-text {
         display flex
         font-family var(--second-font-cormorant)
         font-size 4rem
-        position relative
         background-color var(--title-gradient)
         color transparent
         -webkit-background-clip text
         background-clip text
         text-shadow 0 3px 3px rgba(0, 0, 0, 0.15)
+
+        +below(800px) {
+          font-size 1.875rem
+        }
       }
     }
 
@@ -119,6 +151,10 @@ const { $asset } = useNuxtApp()
       font-size 3rem
       color var(--brown)
       margin-top 30px
+
+      +below(800px) {
+       font-size 1.5rem
+      }
     }
 
     &-text {
@@ -137,6 +173,10 @@ const { $asset } = useNuxtApp()
         font-size 2.25rem
         font-family var(--second-font-cormorant)
         color var(--brown)
+
+        +below(800px) {
+          font-size 1.25rem
+        }
       }
     }
 

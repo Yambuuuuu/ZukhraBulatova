@@ -1,9 +1,21 @@
 <template>
 	<div class="about-main-wrapper">
 		<div class="about-main-wrapper-inner">
-			<img :src="themeStore.isDark ? $asset('/svg/art-player-left-light.svg') : $asset('/img/art-player-left-dark.png')" alt="" class="about-main-wrapper-art about-main-wrapper-art--left" />
-			<img :src="themeStore.isDark ? $asset('/svg/oval-player-light.svg') : $asset('/img/oval-player-dark.png')" alt="" class="about-main-wrapper-oval" />
-			<img :src="themeStore.isDark ? $asset('/svg/art-player-right-light.svg') : $asset('/img/art-player-right-dark.png')" alt="" class="about-main-wrapper-art about-main-wrapper-art--right" />
+			<img
+				:src="themeStore.isDark ? $asset('/svg/art-player-left-light.svg') : $asset('/img/art-player-left-dark.png')"
+				alt=""
+				class="about-main-wrapper-art about-main-wrapper-art--left"
+			/>
+			<img
+				:src="themeStore.isDark ? $asset('/svg/oval-player-light.svg') : $asset('/img/oval-player-dark.png')"
+				alt=""
+				class="about-main-wrapper-oval"
+			/>
+			<img
+				:src="themeStore.isDark ? $asset('/svg/art-player-right-light.svg') : $asset('/img/art-player-right-dark.png')"
+				alt=""
+				class="about-main-wrapper-art about-main-wrapper-art--right"
+			/>
 		</div>
 		<div class="about-main-player">
 			<audio ref="audio" :src="$asset('/audio/lana-del-rey-summertime-sadness.mp3')"></audio>
@@ -114,10 +126,36 @@ onMounted(() => {
     position relative
     padding-top 33px
     z-index 100
+    justify-content center
+    width 100%
 
     &-inner {
       display flex
       align-items center
+      justify-content center
+    }
+
+    &-art {
+      +below(800px) {
+        width 40px
+        height 65px
+        object-fit contain
+      }
+
+      +below(1000px) {
+        width 50px
+        height 73px
+      }
+    }
+
+    &-oval {
+      +below(1000px) {
+        width 480px
+      }
+
+      +below(650px) {
+        width 300px
+      }
     }
   }
 
@@ -133,6 +171,22 @@ onMounted(() => {
     transform translate(35%, 35%)
     inset 0
 
+    +below(1000px) {
+      left 50%
+      top 35%
+      right auto
+      bottom auto
+      transform translate(-50%, 0)
+      width 90%
+      max-width 480px
+    }
+
+    +below(650px) {
+      top 30%
+      width 95%
+      max-width 300px
+    }
+
     &-controls {
       display flex
       align-items center
@@ -145,6 +199,14 @@ onMounted(() => {
       align-items center
       gap 12px
       width 100%
+
+      +below(1000px) {
+        width 80%
+      }
+
+      +below(650px) {
+        width 60%
+      }
     }
 
     &-btn {
@@ -196,6 +258,11 @@ onMounted(() => {
         width 100%
         height 100%
         object-fit contain
+
+        +below(800px) {
+          width 24px
+          height 24px
+        }
       }
     }
 
